@@ -37,3 +37,6 @@
 
 <a name="javaScripts_basic"></a>
 ## II. JavaScripts cơ bản
+
+<a name="variable"></a>
+#### 1.Tìm hiểu biến trong javaScripts
