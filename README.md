@@ -40,3 +40,16 @@
 
 <a name="variable"></a>
 #### 1.Tìm hiểu biến trong javaScripts
+
+<a name="hangso"></a>
+#### 2. Tìm hiểu hằng trong JavaScript
+
+<a name="dataType"></a>
+#### 3. Các kiểu dữ liệu trong JavaScript
+
+<a name="chuyendoidata"></a>
+#### 4. Chuyển đổi kiểu dữ liệu trong Javascript
+
+<a name="hamtuongtac"></a>
+#### 5. Hàm tương tác với người dùng alert, confirm, prompt
+
