@@ -1,0 +1,33 @@
+I. Phạm vi
+  1. var: Global, local
+  2. let: Global, local, block
+  3. const: Global, local, block
+II. Redeclaration (Khai báo lại) và Reassignment (Gán lại giá trị)
+  1. var: Yes, Yes
+  2. let: No, Yes
+  3. const: No, No
+III. Hosting
+  1. var: Yes
+  2. let: No
+  3. const: No
+  Note: có nghĩa là nó nhấc các định nghĩa biến lên trên đầu, nó nhấc với những biến được hỗ trợ hosting
+  cụ thể bạn có thể viết như này:
+
+  a = 1;
+  var a;
+  console.log(a)
+IV. Sử dụng
+  1. khi sử dụng biến và không gán lại ==> const
+  2. khi sử dụng biến và gán lại giá trị ==> let
+
+Note: 
+  - let vs const: khác nhau ở chỗ 
+    + let việc khai báo lại biến trong cùng một phạm vi sẽ gây ra lỗi
+    + const bạn có thể khai báo biến cùng tên trong các phạm vi khác nhau mà không gây xung đột.
+ cụ thể với đoạn code sau
+
+ const test = '12312';
+  {
+    let test = 23; // Lỗi: Identifier 'test' has already been declared
+    console.log(test);
+  }
