@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch-RestAPI</title>
+  <style>
+    #form_create_scourses label{
+      display: inline-block;
+      min-width: 120px;
+    }
+
+    div {
+      margin-top: 8px;
+    }
+
+    label{
+      display: inline-block;
+      height: 100%;
+      vertical-align: top;
+      min-width: 120px;
+    }
+
+    input, textarea{
+        max-width: 170px;
+    }
+
+    button{
+      padding: 4px 8px;
+    }
+
+    #form_create_scourses button{
+      margin-top: 12px;
+      padding: 4px 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Danh Sách Khóa Học</h1>
+  <ul id="list-courses">
+  </ul>
+
+  <div id="form_create_courses">
+    <div>
+      <label>Name</label>
+      <input type="text" name="name">
+    </div>
+    <div>
+      <label>Description</label>
+      <textarea name="description" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div class="">
+      <button id="create-courses">create</button>
+    </div>
+  </div>
+  <script src="../javaScripts/CRUD_Fetch_RESTAPI.js"></script>
+</body>
+
+</html>

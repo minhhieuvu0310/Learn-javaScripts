@@ -1,0 +1,19 @@
+{
+  "courses": [
+    {
+      "name": "khóa học Java Backend",
+      "description": "sau khi hoàn thành khóa học các bạn có thể trở thành một JavaBackend",
+      "id": 1
+    },
+    {
+      "name": "Khóa học ReactJS",
+      "description": "Trở thành ReactJS Developer có thu nhập khủng từ 30M đến 90M",
+      "id": 2
+    },
+    {
+      "name": "Khóa học NodeJS",
+      "description": "Trở thành NodeJS Developer để có thu nhập khủng bố",
+      "id": 3
+    }
+  ]
+}
