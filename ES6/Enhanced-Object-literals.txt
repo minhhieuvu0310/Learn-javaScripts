@@ -1,0 +1,40 @@
+I. Tìm hiểu về Enhanced Object Literal
+  1. Đây là một khái niệm
+  2. Giúp chúng ta định nghĩa "key vs value" cho object
+  3. Định nghĩa method cho object
+  4. Định nghĩa key cho object dưới dạng biến
+
+Ví dụ
+  // Định nghĩa key và value cho object
+
+  var name = 'JavaScripts'
+  var price = 1000;
+
+  var course = {
+    name,
+    price
+  }
+
+  // Định nghĩa method cho object
+
+  var name = 'JavaScripts'
+  var price = 1000;
+
+  var course = {
+    name,
+    price,
+    getName(){
+      return this.name;
+    }
+  }
+
+  // Định nghĩa key cho object dưới dạng biến
+    Sử dụng : khi muốn tùy vào giá trị của biến mà lấy ra value tương ứng
+
+    var fieldeName = 'name'
+    var fieldPrice = 'price'
+
+    const course = {
+      [fieldeName]: 'JavaScripts'
+      [fieldPrice]: 10000
+    }

@@ -1,0 +1,17 @@
+I. Tagged template String là gì
+  Tagged template String là một cách để khai báo chuỗi trong JavaScript, cho phép chúng ta sử dụng biến, 
+  biểu thức, hàm bên trong chuỗi mà không phải thông qua phép cộng chuỗi
+
+ví dụ
+  function tag(strings, ...values) {
+    // strings là một mảng chứa các phần của chuỗi
+    // values là một mảng chứa các giá trị của biểu thức
+    console.log(strings); // ["Hello ", " ", "!"]
+    console.log(values); // ["world", 2021]
+    return strings[0] + values[0].toUpperCase() + strings[1] + values[1] + strings[2];
+  }
+
+  let name = "world";
+  let year = 2021;
+  let result = tag`Hello ${name} ${year}!`; // gọi hàm tag với tagged template String
+  console.log(result); // Hello WORLD 2021!

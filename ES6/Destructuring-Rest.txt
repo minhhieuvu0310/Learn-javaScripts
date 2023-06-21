@@ -1,0 +1,121 @@
+I. Destructuring là gì, Rest parameter?
+  Destructuring là một cú pháp cho phép bạn "trích xuất" các giá trị từ một đối tượng hoặc mảng và "gán" chúng cho các biến riêng biệt một cách thuận tiện
+
+  Rest parameter là một cú pháp cho phép hàm nhận một số lượng đối số không xác định các đối số xác định dưới dạng một mảng. Nó cung cấp một cách để biểu diễn
+  các hàm có số lượng tham số biến đổi trong JavaScripts
+
+II. Tìm hiểu về Destructuring và Rest parameter
+  1. Destructuring
+  // structured assignment 
+  var tmp = [1, 2, 3];
+  a = tmp[0], b = tmp[1], c = tmp[2];
+
+  console.log(a, b, c); // 1 2 3
+
+  // destructuring assignment
+  var tmp = [1, 2, 3];
+  
+  var [a, b, c] = tmp
+
+  console.log(a, b, c); // 1 2 3
+
+  2. Destructuring với rest parameter
+   var array = [1, 2, 3]
+   var [a, ...rest] = [1, 2, 3]
+
+   console.log(a) // 1
+   console.log(rest) // 2,3
+
+  3. Destructuring với Object
+    var course = {
+      name : 'JavaScripts'
+      price : 10000
+    }
+
+    var {name, price} = course
+
+    console.log(name) // JavaScripts
+    console.log(price) // 10000
+
+    Note: nhớ kỹ khi dùng destructuring với object thì phải gọi đúng key của object nếu như truyền ko đúng key thì nó cái giá trị đó sẽ là undefiend
+    
+    Ví dụ với trường hợp trên ko có key price2: var {name, price, price2} = course 
+  
+    Ví dụ Rest parameter
+
+    var course = {
+      name : 'JavaScripts'
+      price : 10000,
+      image: 'image-address'
+    }
+    var {name, ...rest} = course
+
+    console.log(name) // JavaScripts
+    console.log(address) // {price : 10000, image: 'image-address'}
+
+    // Khi object có object con
+
+    var course = {
+      name : 'JavaScripts'
+      price : 10000,
+      image: 'image-address',
+      children:{
+        name: 'ReactJS'
+      }
+    }
+
+    1.
+      var { name, children: {name}} = course // nếu như thế này thì name sau sẽ ghi đè name trước( lý do vì trùng key name)
+      Giải quyết : lấy ra và dổi tên 
+      var { name : parentName, children: {name: childrenName}} = course
+
+      console.log(parentName)// JavaScripts
+      console.log(childrenName) // ReactJS
+    2.
+      Nếu như chúng ta muốn lấy ra một value mà nó không có trong object thì sẽ nhận về undefiend. Nhưng chúng ta có thể truyền giá trị mặc định cho nó
+      var { name, desciption = 'Default Desciption'} = course
+
+      console.log(desciption) // Default desciption
+  4. Sử dụng rest parameter với  function
+    Note: nó là rest parameter khi nó sử dụng với destructuring và function
+    Note: Nếu dùng rest parameter với function thì nó sẽ gộp tất cả các giá trị truyền vào thành một mảng(đọc lại định nghĩa)
+
+    function logger(...param){
+      console.log(param)
+    }
+
+    console.log(logger(1,2,3,4,5,6,7,8)) // ==> [1,2,3,4,5,6,7,8]
+
+    Note: rest thực chất là lấy ra phần còn lại. ví dụ :
+
+    function logger(a, ...param){
+      console.log(param)
+    }
+
+    logger(1,2,3,4,5,6) // => [2, 3, 4, 5, 6] vì a = 1 param = [2,3,4,5,6] param ở đây là những thằng còn lại
+
+    // object
+    function logger({name, price, ...rest}){
+      console.log(name);
+      console.log(price);
+      console.log(rest)
+    }
+
+    logger({
+      name : 'JavaScripts'
+      price : 10000,
+      desciption: 'desciption content'
+    })  // ==> 'JavaScripts'
+        // ==> 10000
+        // ==> {desciption: 'desciption content'}
+
+    // array
+     function logger([a, b, ...rest]){
+      console.log(a);
+      console.log(b);
+      console.log(rest)
+    }
+
+    logger([1, 2, 3, 4, 5]) // ==> 1
+                            // ==> 2
+                            // ==> [3,4,5]

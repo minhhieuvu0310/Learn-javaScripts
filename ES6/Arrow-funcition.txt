@@ -1,0 +1,14 @@
+Ví dụ về arrow function
+  const sum = (a,b)=>{
+    return a+b;
+  }
+1. khi bạn viết cái gì sau => nó sẽ hiểu là return trừ {} thì nó sẽ hiểu là một khối code
+  const sum = (a,b) => a+b;
+2. khi bạn muốn return ra một Object thì dùng () để gói lại
+  const sum = (a, b) => ({a: a, b: b})
+3. khi hàm của bạn chỉ có 1 tham số bạn có thể bỏ ()
+  const logger = log => console.log(log)
+
+II Điêù khác nhau giữa Arrow function và các function khác là
+  + Arrow function: nó không có context của nó
+  + Arrow function: không thể sử dụng nó để làm function Contructor(vì nó không có context)

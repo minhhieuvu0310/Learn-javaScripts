@@ -1,0 +1,9 @@
+I
+  - Với những tham số bắt buộc thì không cần truyền giá trị mặc định(vì điều đó là thừa)
+  - Với những tham số không bắt buộc phải truyền vào thì ta mới cần truyền giá trị mặc định cho nó
+II. Ví dụ
+function logger(log, type="log"){
+  console[type](log);
+}
+
+logger('Message...')
