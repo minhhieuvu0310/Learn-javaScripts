@@ -1,0 +1,4 @@
+I.Giải thích:
+  Template Literals(Template String)
+  - Là một cách mới để tạo chuỗi trong javaScripts có thể tạo chuỗi nhiều dòng và nhúng biểu thức vào chuỗi.
+  - được viết bằng dấu trọng âm (`) và có thể sử dụng với hàm tag để thực hiện các thao tác tùy chỉnh.

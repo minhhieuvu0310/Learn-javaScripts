@@ -1,0 +1,74 @@
+I. Spread là gì?
+  Spread operator trong JavaScript là một toán tử giúp chúng ta sao chép nhanh chóng tất cả hoặc một phần
+  của một mảng hoặc một đối tượng hiện có sang một mảng hoặc đối tượng khác
+
+II. Ví dụ với Spread
+  1. Hợp nhất mảng
+    array1 = [1, 2, 3, 4, 5]
+    array2 = [6, 7, 8, 9]
+
+    // sử dụng toán tử Spread
+
+    array3 = [...array1, ...array2] //==> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  
+  2. Hợp nhất Object
+
+    var object1 = {name: 'JavaScript'}
+    var object2 = {price: 10000} 
+    var object3 = {
+      ...object1,
+      ...object2
+    } // => {
+      //        name: 'JavaScript',
+      //        price: 10000
+      //     }
+  3.
+
+    var name = [1,2,3]
+    var object2 = {price : 10000}
+    var test = {...name, ...object2}
+    console.log(test)
+
+    kết quả
+    {  0: "a"
+      1: "," 
+      2: "b"
+      3: "c"
+      price: 1000
+    }
+    nếu như var test = [...name, ...object2] thì sẽ lỗi 
+    
+  4.
+    Nếu như spread có 2 cái key trùng nhau thì key sau sẽ overide lại giá trị của key trước. Ví dụ:
+    var test1 = {name: 'JavaScript', price:1000}
+    var test2 = {name: 'ReactJS' }
+    var test3 = {
+      ...test1,
+      ...test2
+    } 
+
+    console.log(test3.name) // ReactJS 
+  
+  5. sử dụng Spread với function
+    var array = ['PHP', 'JavaScript', 'Ruby']
+    function logger(...rest) {
+        for (let item of rest) {
+            console.log(item)
+        }
+    }
+    logger(...array);
+
+    // PHP
+    // JavaScript
+    // Ruby 
+
+Note : Rest Parameter và  Spread
+  Rest Parameter: 
+    - khi đi cùng với Destructuring và function
+    - gom các phần tử vào một mảng
+    - là Parameter cuối cùng của function, trong khi Spread có thể ở bất cứ đâu
+  Spread
+    - khi truyền đối số thì nó là Spread
+    
+
+
